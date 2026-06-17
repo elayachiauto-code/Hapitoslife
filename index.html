@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYACHI INFO Health Pro – مستشارك الصحي الذكي</title>
+<meta name="description" content="خطة صحية مخصصة 100% – غذاء + تمارين + إرسال فوري لإيميلك">
+<meta name="theme-color" content="#FFFFFF">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --g:#059652;--g2:#047A42;--g3:#E8F7EF;
+  --ink:#0D1B2A;--sub:#4A5568;--line:#E2E8F0;
+  --bg:#FFFFFF;--bg2:#F8FAFC;
+  --orange:#E85D2F;--gold:#D4970A;
+  --serif:'Georgia',serif;--sans:'Tahoma','Segoe UI',Arial,sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);overflow-x:hidden;}
+img{display:block;max-width:100%;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 20px;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 1px 16px rgba(0,0,0,.06);
+}
+.nav-brand{font-size:.75rem;font-weight:900;color:var(--g);letter-spacing:2.5px;text-transform:uppercase;}
+.lang-btns{display:flex;gap:4px;}
+.lang-btn{padding:5px 11px;border-radius:20px;border:1px solid var(--line);background:none;color:var(--sub);font-size:.7rem;font-weight:700;cursor:pointer;transition:.15s;}
+.lang-btn.active{background:var(--g);color:#fff;border-color:var(--g);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr;
+  position:relative;overflow:hidden;
+  padding-top:56px;
+}
+.hero-img{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80') center/cover no-repeat;
+}
+.hero-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(5,150,82,.88) 0%,rgba(4,60,30,.75) 100%);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:60px 24px 48px;
+  min-height:calc(100vh - 56px);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:.7rem;font-weight:800;letter-spacing:2px;
+  padding:5px 14px;border-radius:30px;margin-bottom:20px;text-transform:uppercase;
+  backdrop-filter:blur(4px);
+}
+.hero-badge span{width:7px;height:7px;border-radius:50%;background:#7FFFC4;display:inline-block;animation:blink 1.4s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(2.4rem,8vw,4.2rem);
+  font-weight:900;line-height:1.1;
+  color:#fff;letter-spacing:-1px;margin-bottom:16px;
+}
+.hero-title em{font-style:italic;color:#7FFFC4;}
+.hero-sub{font-size:.95rem;color:rgba(255,255,255,.8);max-width:420px;margin:0 auto 32px;line-height:1.7;}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.btn-w{
+  background:#fff;color:var(--g);border:none;
+  padding:14px 30px;border-radius:30px;font-size:.95rem;font-weight:900;
+  cursor:pointer;text-decoration:none;display:inline-block;transition:.2s;
+  box-shadow:0 4px 20px rgba(0,0,0,.2);
+}
+.btn-w:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3);}
+.btn-ghost{
+  background:rgba(255,255,255,.12);color:#fff;
+  border:1px solid rgba(255,255,255,.35);
+  padding:14px 26px;border-radius:30px;font-size:.9rem;font-weight:700;
+  cursor:pointer;text-decoration:none;display:inline-block;transition:.2s;
+  backdrop-filter:blur(4px);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.2);}
+.hero-trust{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.75);font-size:.78rem;}
+.trust-icon{font-size:1rem;}
+
+/* ── STATS BAND ── */
+.stats-band{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:var(--g);
+}
+.sband-item{
+  text-align:center;padding:22px 12px;
+  border-left:1px solid rgba(255,255,255,.15);
+}
+.sband-item:last-child{border-left:none;}
+.sband-num{font-family:var(--serif);font-size:2rem;font-weight:900;color:#fff;line-height:1;}
+.sband-lbl{font-size:.72rem;color:rgba(255,255,255,.75);margin-top:4px;}
+
+/* ── SECTION SHARED ── */
+.sec{padding:56px 20px;}
+.sec-inner{max-width:680px;margin:0 auto;}
+.sec-eye{font-size:.68rem;font-weight:900;letter-spacing:2px;color:var(--g);text-transform:uppercase;margin-bottom:8px;}
+.sec-title{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.3rem);font-weight:900;line-height:1.2;margin-bottom:10px;}
+.sec-title em{font-style:italic;color:var(--g);}
+.sec-sub{font-size:.9rem;color:var(--sub);line-height:1.65;margin-bottom:28px;}
+.alt-bg{background:var(--bg2);}
+.green-bg{background:var(--g3);}
+
+/* ── ATHLETE STRIP ── */
+.athlete-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:3px;height:240px;overflow:hidden;
+}
+.ath-img{
+  background-size:cover;background-position:center;
+  position:relative;overflow:hidden;
+}
+.ath-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(5,150,82,.7));
+}
+.ath-label{
+  position:absolute;bottom:10px;left:0;right:0;
+  text-align:center;color:#fff;font-size:.72rem;font-weight:800;
+  z-index:2;letter-spacing:1px;text-transform:uppercase;
+}
+
+/* ── HOW ── */
+.steps{display:flex;flex-direction:column;gap:0;}
+.step{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.step:last-child{border-bottom:none;}
+.step-num{
+  width:36px;height:36px;flex-shrink:0;border-radius:10px;
+  background:var(--g);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;font-weight:900;
+}
+.step-title{font-size:.95rem;font-weight:800;margin-bottom:3px;}
+.step-desc{font-size:.82rem;color:var(--sub);line-height:1.55;}
+
+/* ── SPLIT: image + content ── */
+.split{display:grid;grid-template-columns:1fr;gap:0;}
+.split-img{
+  height:260px;background-size:cover;background-position:center;
+  position:relative;
+}
+.split-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(5,150,82,.4),rgba(4,60,30,.3));
+}
+.split-content{padding:32px 20px;}
+
+/* ── FEATURES ── */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.feat-card{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:16px 14px;transition:.2s;
+}
+.feat-card:hover{border-color:rgba(5,150,82,.35);box-shadow:0 4px 20px rgba(5,150,82,.08);}
+.feat-em{font-size:1.6rem;margin-bottom:8px;display:block;}
+.feat-t{font-size:.85rem;font-weight:800;margin-bottom:3px;}
+.feat-d{font-size:.75rem;color:var(--sub);line-height:1.5;}
+
+/* ── RESULTS PHOTO ── */
+.results-section{position:relative;overflow:hidden;}
+.results-photo{
+  width:100%;height:220px;
+  background:url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=900&q=80') center/cover;
+  position:relative;
+}
+.results-photo::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(5,150,82,.85),rgba(4,40,20,.6));
+}
+.results-photo-text{
+  position:absolute;inset:0;z-index:2;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:20px;
+}
+.results-photo-title{font-family:var(--serif);font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:6px;}
+.results-photo-sub{font-size:.82rem;color:rgba(255,255,255,.8);}
+
+/* ── BA CARDS ── */
+.ba-card{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:20px;margin-bottom:10px;
+  display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;
+  direction:ltr;
+}
+.ba-side{text-align:center;}
+.ba-lbl{font-size:.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--sub);margin-bottom:5px;direction:rtl;}
+.ba-val{font-family:var(--serif);font-size:1.8rem;font-weight:900;}
+.ba-val.b{color:var(--orange);}
+.ba-val.a{color:var(--g);}
+.ba-arrow{
+  font-size:1.6rem;color:var(--g);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;line-height:1;
+}
+.ba-foot{font-size:.78rem;color:var(--sub);text-align:center;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);}
+.ba-tag{display:inline-block;background:var(--g3);border:1px solid rgba(5,150,82,.25);color:var(--g);font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:20px;}
+
+/* ── TRAINER CARDS ── */
+.trainer-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trainer-card{border-radius:14px;overflow:hidden;position:relative;height:200px;}
+.trainer-card img{width:100%;height:100%;object-fit:cover;}
+.trainer-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(5,50,25,.85));
+}
+.trainer-info{position:absolute;bottom:12px;left:12px;right:12px;z-index:2;color:#fff;}
+.trainer-name{font-size:.88rem;font-weight:900;}
+.trainer-role{font-size:.72rem;color:rgba(255,255,255,.75);}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:flex;flex-direction:column;gap:10px;}
+.testi-card{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.testi-avatar{
+  width:44px;height:44px;flex-shrink:0;border-radius:50%;
+  overflow:hidden;border:2px solid var(--g3);
+}
+.testi-avatar img{width:100%;height:100%;object-fit:cover;}
+.testi-body{}
+.stars{color:var(--gold);font-size:.8rem;margin-bottom:5px;}
+.testi-text{font-size:.85rem;line-height:1.65;color:#334155;margin-bottom:8px;}
+.testi-name{font-size:.8rem;font-weight:800;}
+.testi-info2{font-size:.72rem;color:var(--sub);}
+
+/* ── PRICING ── */
+.pricing-grid{display:flex;flex-direction:column;gap:12px;}
+.price-card{
+  background:#fff;border:2px solid var(--line);border-radius:18px;padding:22px 20px;
+  position:relative;overflow:hidden;transition:.2s;
+}
+.price-card:hover{box-shadow:0 8px 30px rgba(0,0,0,.08);}
+.price-card.featured{border-color:var(--g);background:linear-gradient(160deg,#EAF7F0,#fff);}
+.price-card.featured::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--g2),var(--g));
+}
+.price-badge{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--orange),var(--gold));
+  color:#fff;font-size:.65rem;font-weight:900;
+  padding:3px 10px;border-radius:20px;letter-spacing:.5px;margin-bottom:10px;
+}
+.price-name{font-size:1.05rem;font-weight:900;margin-bottom:3px;}
+.price-desc{font-size:.8rem;color:var(--sub);margin-bottom:14px;}
+.price-val{display:flex;align-items:baseline;gap:5px;margin-bottom:16px;}
+.price-num{font-family:var(--serif);font-size:2.8rem;font-weight:900;color:var(--g);line-height:1;}
+.price-cur{font-size:.85rem;color:var(--sub);}
+.price-per{font-size:.75rem;color:var(--sub);}
+.price-feats{list-style:none;margin-bottom:18px;}
+.price-feats li{font-size:.82rem;padding:4px 0;display:flex;align-items:center;gap:7px;color:#475569;border-bottom:1px solid var(--line);}
+.price-feats li:last-child{border:none;}
+.price-feats .ck{color:var(--g);font-weight:900;}
+.price-btn{width:100%;padding:13px;border:none;border-radius:25px;font-size:.9rem;font-weight:900;cursor:pointer;text-decoration:none;display:block;text-align:center;transition:.2s;}
+.btn-outline{background:none;border:2px solid var(--line);color:var(--ink);}
+.btn-outline:hover{border-color:var(--g);color:var(--g);}
+.btn-solid{background:linear-gradient(135deg,var(--g2),var(--g));color:#fff;box-shadow:0 4px 18px rgba(5,150,82,.25);}
+.btn-solid:hover{box-shadow:0 6px 28px rgba(5,150,82,.4);}
+
+/* ── GUARANTEE ── */
+.guar-box{
+  background:var(--g3);border:1px solid rgba(5,150,82,.2);border-radius:14px;
+  padding:18px;display:flex;gap:12px;align-items:flex-start;margin-top:12px;
+}
+.guar-icon{font-size:1.8rem;flex-shrink:0;}
+.guar-title{font-size:.88rem;font-weight:800;margin-bottom:3px;}
+.guar-desc{font-size:.78rem;color:var(--sub);line-height:1.5;}
+
+/* ── FAQ ── */
+.faq-item{border-bottom:1px solid var(--line);padding:16px 0;}
+.faq-q{
+  font-size:.9rem;font-weight:800;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  margin-bottom:0;
+}
+.faq-icon{color:var(--g);font-size:1.2rem;flex-shrink:0;transition:.2s;font-weight:400;}
+.faq-a{font-size:.84rem;color:var(--sub);line-height:1.6;display:none;padding-top:10px;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+
+/* ── FINAL CTA ── */
+.final-cta{
+  position:relative;overflow:hidden;
+  min-height:280px;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:56px 24px;
+}
+.final-cta-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1200&q=80') center/cover no-repeat;
+}
+.final-cta-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,150,82,.92),rgba(4,40,20,.88));}
+.final-cta-inner{position:relative;z-index:2;max-width:480px;}
+.final-cta-title{font-family:var(--serif);font-size:clamp(1.8rem,6vw,2.8rem);font-weight:900;color:#fff;margin-bottom:12px;}
+.final-cta-title em{font-style:italic;color:#7FFFC4;}
+.final-cta-sub{font-size:.9rem;color:rgba(255,255,255,.8);margin-bottom:28px;line-height:1.65;}
+
+/* ── FOOTER ── */
+footer{background:#F0F4F8;border-top:1px solid var(--line);padding:24px 20px;text-align:center;}
+.foot-brand{font-size:.75rem;font-weight:900;color:var(--g);letter-spacing:2px;margin-bottom:5px;}
+.foot-copy{font-size:.7rem;color:var(--sub);}
+
+/* ── HB DIVIDER ── */
+.hb{width:100%;height:48px;overflow:hidden;background:inherit;}
+.hb svg{width:100%;height:100%;}
+.hb-p{stroke:var(--g);stroke-width:1.5;fill:none;stroke-dasharray:1200;stroke-dashoffset:1200;animation:drawHB 2.5s ease forwards;}
+@keyframes drawHB{to{stroke-dashoffset:0;}}
+
+/* ── FLOAT ── */
+.float-btn{
+  position:fixed;bottom:18px;z-index:100;
+  background:linear-gradient(135deg,var(--g2),var(--g));
+  color:#fff;font-size:.8rem;font-weight:900;
+  padding:11px 18px;border-radius:30px;
+  box-shadow:0 4px 20px rgba(5,150,82,.4);
+  text-decoration:none;animation:bob 3s ease-in-out infinite;
+}
+[dir="rtl"] .float-btn{left:16px;}
+[dir="ltr"] .float-btn{right:16px;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.rv.vis{opacity:1;transform:translateY(0);}
+
+/* ── SEP ── */
+.sep{width:100%;height:1px;background:var(--line);}
+
+/* ══════════════════════════════════
+   DESKTOP — min-width: 768px
+══════════════════════════════════ */
+@media(min-width:768px){
+
+  /* NAV */
+  nav{padding:14px 48px;}
+  .nav-brand{font-size:.85rem;}
+
+  /* HERO */
+  .hero-inner{padding:80px 48px 60px;}
+  .hero-title{font-size:clamp(3rem,5vw,5rem);}
+  .hero-sub{font-size:1.05rem;max-width:560px;}
+  .hero-btns{gap:14px;}
+  .btn-w{padding:16px 40px;font-size:1rem;}
+  .btn-ghost{padding:16px 32px;font-size:.95rem;}
+
+  /* STATS */
+  .stats-band{grid-template-columns:repeat(3,1fr);}
+  .sband-num{font-size:2.8rem;}
+  .sband-lbl{font-size:.82rem;}
+
+  /* SECTIONS */
+  .sec{padding:80px 48px;}
+  .sec-inner{max-width:900px;}
+  .sec-title{font-size:clamp(2rem,3.5vw,2.8rem);}
+
+  /* ATHLETE STRIP */
+  .athlete-strip{height:340px;}
+
+  /* HOW — 2 columns */
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;}
+  .step{padding:24px 0;}
+
+  /* SPLIT — side by side */
+  .split{grid-template-columns:1fr 1fr;}
+  .split-img{height:auto;min-height:400px;}
+
+  /* FEATURES — 3 columns */
+  .feat-grid{grid-template-columns:repeat(3,1fr);gap:14px;}
+  .feat-card{padding:22px 18px;}
+  .feat-em{font-size:2rem;}
+  .feat-t{font-size:.9rem;}
+  .feat-d{font-size:.8rem;}
+
+  /* RESULTS */
+  .results-photo{height:300px;}
+  .results-photo-title{font-size:2rem;}
+
+  /* BA CARDS — 3 in a row */
+  .ba-container-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+  /* TRAINER GRID */
+  .trainer-grid{grid-template-columns:repeat(4,1fr);}
+  .trainer-card{height:260px;}
+
+  /* TESTIMONIALS — 3 columns */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .testi-card{flex-direction:column;}
+  .testi-avatar{width:52px;height:52px;}
+
+  /* PRICING — side by side */
+  .pricing-grid{flex-direction:row;gap:20px;}
+  .price-card{flex:1;}
+  .price-num{font-size:3.2rem;}
+
+  /* FAQ — 2 columns */
+  .faq-inner{columns:2;column-gap:40px;}
+  .faq-item{break-inside:avoid;}
+
+  /* FINAL CTA */
+  .final-cta{min-height:360px;padding:80px 48px;}
+  .final-cta-title{font-size:clamp(2.2rem,4vw,3.4rem);}
+  .final-cta-sub{font-size:1rem;}
+
+  /* FLOAT BTN */
+  .float-btn{padding:13px 24px;font-size:.88rem;}
+
+  /* GUAR BOX */
+  .guar-box{padding:22px 24px;}
+
+  /* PAYMENT METHODS */
+  .pay-methods-grid{grid-template-columns:repeat(4,1fr);}
+}
+
+@media(min-width:1100px){
+  .sec-inner{max-width:1060px;}
+  .hero-title{font-size:5rem;}
+  .feat-grid{grid-template-columns:repeat(3,1fr);}
+}
+
+/* ── PAYMENT METHODS STRIP ── */
+.pay-strip{
+  background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:28px 20px;
+}
+.pay-strip-title{
+  text-align:center;font-size:.7rem;font-weight:800;
+  letter-spacing:2px;text-transform:uppercase;color:var(--sub);
+  margin-bottom:20px;
+}
+.pay-methods-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:12px;max-width:680px;margin:0 auto;
+}
+.pay-method{
+  background:var(--bg2);border:1.5px solid var(--line);border-radius:14px;
+  padding:16px 14px;display:flex;align-items:center;gap:12px;
+  transition:.2s;
+}
+.pay-method:hover{border-color:var(--g);background:var(--g3);}
+.pay-method-icon{font-size:1.8rem;flex-shrink:0;}
+.pay-method-name{font-size:.85rem;font-weight:800;margin-bottom:2px;}
+.pay-method-desc{font-size:.72rem;color:var(--sub);}
+.pay-method-badge{
+  margin-right:auto;
+  background:var(--g3);border:1px solid rgba(5,150,82,.25);
+  color:var(--g);font-size:.62rem;font-weight:800;
+  padding:2px 8px;border-radius:10px;white-space:nowrap;
+}
+.pay-method.dahabia{border-color:rgba(255,184,0,.4);background:#FFFBEB;}
+.pay-method.dahabia:hover{border-color:#D4970A;background:#FEF3C7;}
+.pay-method.dahabia .pay-method-name{color:#92400E;}
+.pay-method.dahabia .pay-method-badge{background:#FEF3C7;border-color:#D4970A;color:#92400E;}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">AYACHI INFO • Health Pro</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="L('ar')">🇩🇿 AR</button>
+    <button class="lang-btn" onclick="L('en')">🇬🇧 EN</button>
+    <button class="lang-btn" onclick="L('fr')">🇫🇷 FR</button>
+  </div>
+</nav>
+
+<!-- FLOAT -->
+<a class="float-btn" id="floatBtn" href="#pricing"></a>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span></span> <span id="hBadge"></span></div>
+    <h1 class="hero-title" id="hTitle"></h1>
+    <p class="hero-sub" id="hSub"></p>
+    <div class="hero-btns">
+      <a class="btn-w" id="hCta1" href="#pricing"></a>
+      <a class="btn-ghost" id="hCta2" href="#how"></a>
+    </div>
+    <div class="hero-trust" id="hTrust"></div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band rv" id="statsBand"></div>
+
+<!-- ══ PAYMENT METHODS ══ -->
+<div class="pay-strip rv" id="payStrip">
+  <div class="pay-strip-title" id="payStripTitle">طرق الدفع المتاحة</div>
+  <div class="pay-methods-grid">
+    <div class="pay-method">
+      <span class="pay-method-icon">🅿️</span>
+      <div>
+        <div class="pay-method-name">PayPal</div>
+        <div class="pay-method-desc" id="pmDesc1">Visa / Mastercard / PayPal Balance</div>
+      </div>
+      <span class="pay-method-badge" id="pmBadge1">متاح الآن</span>
+    </div>
+    <div class="pay-method dahabia">
+      <span class="pay-method-icon">🏦</span>
+      <div>
+        <div class="pay-method-name" id="pmName2">البطاقة الذهبية (Dahabia)</div>
+        <div class="pay-method-desc" id="pmDesc2">عبر Chargily Pay — دفع محلي آمن</div>
+      </div>
+      <span class="pay-method-badge" id="pmBadge2">جديد ✨</span>
+    </div>
+    <div class="pay-method">
+      <span class="pay-method-icon">💳</span>
+      <div>
+        <div class="pay-method-name">CIB</div>
+        <div class="pay-method-desc" id="pmDesc3">بطاقة CIB الجزائرية عبر Chargily</div>
+      </div>
+      <span class="pay-method-badge" id="pmBadge3">جديد ✨</span>
+    </div>
+    <div class="pay-method">
+      <span class="pay-method-icon">🔒</span>
+      <div>
+        <div class="pay-method-name" id="pmName4">دفع آمن 100%</div>
+        <div class="pay-method-desc" id="pmDesc4">تشفير SSL • ضمان استرجاع 24 ساعة</div>
+      </div>
+      <span class="pay-method-badge" id="pmBadge4">مضمون</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ATHLETE STRIP ══ -->
+<div class="athlete-strip rv">
+  <div class="ath-img" style="background-image:url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80')">
+    <div class="ath-label" id="athL1"></div>
+  </div>
+  <div class="ath-img" style="background-image:url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=600&q=80')">
+    <div class="ath-label" id="athL2"></div>
+  </div>
+  <div class="ath-img" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80')">
+    <div class="ath-label" id="athL3"></div>
+  </div>
+</div>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="sec alt-bg rv" id="how">
+  <div class="sec-inner">
+    <div class="sec-eye" id="howEye"></div>
+    <h2 class="sec-title" id="howTitle"></h2>
+    <p class="sec-sub" id="howSub"></p>
+    <div class="steps" id="stepsEl"></div>
+  </div>
+</section>
+
+<!-- ══ SPLIT: WOMAN RUNNING ══ -->
+<div class="split rv">
+  <div class="split-img" style="background-image:url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=900&q=80')">
+    <div class="split-img-overlay"></div>
+  </div>
+  <div class="split-content sec-inner">
+    <div class="sec-eye" id="featEye"></div>
+    <h2 class="sec-title" id="featTitle"></h2>
+    <p class="sec-sub" id="featSub"></p>
+    <div class="feat-grid" id="featGrid"></div>
+  </div>
+</div>
+
+<!-- ══ RESULTS ══ -->
+<section class="results-section rv">
+  <div class="results-photo">
+    <div class="results-photo::after"></div>
+    <div class="results-photo-text">
+      <div class="results-photo-title" id="resPhotoTitle"></div>
+      <div class="results-photo-sub" id="resPhotoSub"></div>
+    </div>
+  </div>
+  <div class="sec alt-bg">
+    <div class="sec-inner">
+      <div class="ba-container-inner" id="baContainer"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRAINER SHOWCASE ══ -->
+<section class="sec rv">
+  <div class="sec-inner">
+    <div class="sec-eye" id="trainEye"></div>
+    <h2 class="sec-title" id="trainTitle"></h2>
+    <p class="sec-sub" id="trainSub"></p>
+    <div class="trainer-grid">
+      <div class="trainer-card">
+        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=80" alt="athlete" loading="lazy">
+        <div class="trainer-info"><div class="trainer-name" id="tr1n"></div><div class="trainer-role" id="tr1r"></div></div>
+      </div>
+      <div class="trainer-card">
+        <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=400&q=80" alt="athlete" loading="lazy">
+        <div class="trainer-info"><div class="trainer-name" id="tr2n"></div><div class="trainer-role" id="tr2r"></div></div>
+      </div>
+      <div class="trainer-card">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80" alt="athlete" loading="lazy">
+        <div class="trainer-info"><div class="trainer-name" id="tr3n"></div><div class="trainer-role" id="tr3r"></div></div>
+      </div>
+      <div class="trainer-card">
+        <img src="https://images.unsplash.com/photo-1616803689943-5601631c7fec?w=400&q=80" alt="athlete" loading="lazy">
+        <div class="trainer-info"><div class="trainer-name" id="tr4n"></div><div class="trainer-role" id="tr4r"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HB ══ -->
+<div class="hb" style="background:var(--bg2);">
+  <svg viewBox="0 0 800 48" preserveAspectRatio="none">
+    <path class="hb-p" d="M0,24 L180,24 L210,6 L228,42 L246,10 L264,38 L280,24 L800,24"/>
+  </svg>
+</div>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="sec alt-bg rv">
+  <div class="sec-inner">
+    <div class="sec-eye" id="testiEye"></div>
+    <h2 class="sec-title" id="testiTitle"></h2>
+    <div class="testi-grid" id="testiGrid"></div>
+  </div>
+</section>
+
+<!-- ══ PRICING ══ -->
+<section class="sec rv" id="pricing">
+  <div class="sec-inner">
+    <div class="sec-eye" id="priceEye"></div>
+    <h2 class="sec-title" id="priceTitle"></h2>
+    <p class="sec-sub" id="priceSub"></p>
+    <div class="pricing-grid" id="pricingGrid"></div>
+    <div class="guar-box">
+      <div class="guar-icon">🔒</div>
+      <div>
+        <div class="guar-title" id="guarTitle"></div>
+        <div class="guar-desc" id="guarDesc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="sec alt-bg rv">
+  <div class="sec-inner">
+    <div class="sec-eye" id="faqEye"></div>
+    <h2 class="sec-title" id="faqTitle"></h2>
+    <div id="faqEl"></div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<div class="final-cta rv">
+  <div class="final-cta-bg"></div>
+  <div class="final-cta-inner">
+    <h2 class="final-cta-title" id="finalTitle"></h2>
+    <p class="final-cta-sub" id="finalSub"></p>
+    <a class="btn-w" id="finalCta" href="#pricing" style="font-size:1rem;padding:16px 40px;display:inline-block;"></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">AYACHI INFO • Health Pro</div>
+  <div class="foot-copy" id="footCopy"></div>
+</footer>
+
+<script>
+const T={
+  ar:{
+    dir:'rtl',lang:'ar',
+    badge:'أكثر من 500 مستخدم راضٍ',
+    title:'<em>جسمك</em> يستحق<br>خطة مصمّمة له',
+    sub:'استبيان ذكي من 10 أسئلة يبني لك خطة غذاء وتمارين مخصصة 100٪ — وترسل لإيميلك فوراً',
+    cta1:'احصل على خطتك الآن ←', cta2:'كيف يعمل؟',
+    trust:'<div class="trust-item"><span class="trust-icon">🔒</span>دفع آمن</div><div class="trust-item"><span class="trust-icon">📧</span>إرسال فوري</div><div class="trust-item"><span class="trust-icon">✅</span>ضمان 24 ساعة</div>',
+    stats:[{n:'+500',l:'مستخدم راضٍ'},{n:'21',l:'وجبة مخصصة'},{n:'7',l:'جلسات تمارين'}],
+    athL:['إنقاص وزن','بناء عضلي','لياقة بدنية'],
+    howEye:'كيف يعمل',howTitle:'من <em>سؤال</em> إلى خطة كاملة',howSub:'3 دقائق فقط وخطتك جاهزة',
+    steps:[
+      {n:'01',t:'أجب على 10 أسئلة',d:'عمرك، وزنك، هدفك، مستوى نشاطك، قيودك الغذائية'},
+      {n:'02',t:'التحليل الذكي',d:'نحسب سعراتك اليومية، BMI، والمغذيات المثالية لجسمك'},
+      {n:'03',t:'خطة غذاء مخصصة',d:'21 وجبة أسبوعية مع فيديوهات طريقة الطبخ'},
+      {n:'04',t:'برنامج تمارين',d:'كارديو أو أثقال — حسب هدفك وحالتك الصحية'},
+      {n:'05',t:'تصلك على إيميلك',d:'بعد PayPal مباشرة، خطتك تصل في أقل من دقيقة'}
+    ],
+    featEye:'الميزات',featTitle:'كل ما تحتاجه <em>في مكان واحد</em>',featSub:'برنامج متكامل يجمع التغذية والرياضة والمتابعة',
+    feats:[
+      {e:'📊',t:'تحليل طبي دقيق',d:'BMI والسعرات وتوزيع المغذيات'},
+      {e:'🍽️',t:'وجبات بفيديوهات',d:'كل وجبة مع رابط يوتيوب'},
+      {e:'💪',t:'تمارين بالفيديو',d:'شرح طريقة الأداء الصحيحة'},
+      {e:'🌐',t:'3 لغات',d:'عربي، إنجليزي، فرنسي'},
+      {e:'📧',t:'إرسال فوري',d:'تصميم احترافي في إيميلك'},
+      {e:'🔒',t:'دفع آمن',d:'PayPal + ضمان 24 ساعة'}
+    ],
+    resPhotoTitle:'نتائج حقيقية من مستخدمين حقيقيين',resPhotoSub:'خلال 4 أسابيع من الالتزام',
+    bef:'قبل',aft:'بعد',
+    results:[
+      {b:'108كغ',a:'95كغ',n:'سعيد، 36 سنة — الجزائر',tag:'تخسيس'},
+      {b:'72كغ',a:'80كغ',n:'كريم، 24 سنة — تونس',tag:'بناء عضلي'},
+      {b:'90كغ',a:'78كغ',n:'سارة، 31 سنة — المغرب',tag:'رجيم + رياضة'}
+    ],
+    trainEye:'برنامجنا يناسب الجميع',trainTitle:'لكل هدف <em>برنامج مخصص</em>',trainSub:'سواء كنت مبتدئاً أو محترفاً، رجلاً أو امرأة',
+    trainers:[
+      {n:'تخسيس',r:'إنقاص الدهون وحرق السعرات'},
+      {n:'بناء عضلي',r:'زيادة الكتلة العضلية'},
+      {n:'لياقة بدنية',r:'تحمّل وقوة ومرونة'},
+      {n:'صحة عامة',r:'نمط حياة صحي متوازن'}
+    ],
+    testiEye:'آراء المستخدمين',testiTitle:'ماذا قالوا <em>عن البرنامج؟</em>',
+    testis:[
+      {av:'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80',stars:'★★★★★',text:'البرنامج غيّر حياتي. أول مرة تجيني خطة حسب وزني وطولي وصحتي بالضبط. الوجبات لذيذة وما احتجت أدور على وصفات.',n:'أم خالد',i:'ربة بيت، 38 سنة'},
+      {av:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',stars:'★★★★★',text:'خسرت 5 كيلو في شهر بالبرنامج الأسبوعي. التمارين كانت مناسبة لمستواي كمبتدئ. أنصح الكل بيجرب.',n:'محمد ت.',i:'موظف، 29 سنة'},
+      {av:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',stars:'★★★★★',text:'ما توقعت تجي خطة بهاالاحترافية مقابل 10 دولار. الإيميل فيه كل شيء بالتفصيل.',n:'نور ع.',i:'طالبة جامعية، 22 سنة'}
+    ],
+    priceEye:'الباقات',priceTitle:'اختر <em>باقتك</em>',priceSub:'دفع مرة واحدة — لا اشتراكات شهرية',
+    plans:[
+      {name:'برنامج يوم واحد',desc:'جرّب البرنامج ليوم كامل',price:'5',cur:'USD',per:'/ مرة واحدة',
+       feats:['خطة غذائية ليوم كامل','تمرين مخصص مع فيديو','تحليل BMI والسعرات','إرسال فوري'],btn:'احصل عليه الآن',f:false},
+      {name:'برنامج الأسبوع الكامل',desc:'الخيار الأمثل للنتائج الحقيقية',price:'10',cur:'USD',per:'/ مرة واحدة',badge:'⭐ الأكثر مبيعاً',
+       feats:['21 وجبة مخصصة (7 أيام)','7 جلسات تمارين','فيديوهات الطبخ والتمارين','تحليل طبي كامل','نصائح صحية مخصصة','إرسال فوري'],btn:'احصل عليه الآن',f:true}
+    ],
+    guarTitle:'ضمان الاسترجاع خلال 24 ساعة',guarDesc:'إذا لم تكن راضياً لأي سبب، نعيد لك المبلغ كاملاً. بدون أسئلة.',
+    faqEye:'أسئلة شائعة',faqTitle:'لديك <em>سؤال؟</em>',
+    faqs:[
+      {q:'كيف أستلم البرنامج بعد الدفع؟',a:'فور تأكيد PayPal، يرسل التطبيق برنامجك لإيميلك خلال أقل من دقيقة.'},
+      {q:'هل البرنامج مناسب لجميع الأعمار؟',a:'نعم، يتكيف مع عمرك ووزنك وحالتك الصحية. يعمل مع 14-70 سنة.'},
+      {q:'هل يعمل بدون إنترنت؟',a:'التطبيق يعمل بدون إنترنت بعد التحميل. روابط يوتيوب تحتاج إنترنت.'},
+      {q:'هل يمكن الدفع بدون PayPal؟',a:'حالياً PayPal يقبل Visa/Mastercard. قريباً CIB والذهبية.'},
+      {q:'ماذا لو لم يصلني الإيميل؟',a:'تحقق من Spam. إذا لم تجده: elayachiauto@gmail.com'}
+    ],
+    finalTitle:'ابدأ <em>رحلتك</em> اليوم',finalSub:'خطتك المخصصة جاهزة في 3 دقائق — وترسل لإيميلك فوراً',finalCta:'احصل على خطتك الآن ←',
+    float:'🔥 احصل على خطتك',
+    foot:'© 2025 AYACHI INFO • جميع الحقوق محفوظة • elayachiauto@gmail.com'
+  },
+  en:{
+    dir:'ltr',lang:'en',
+    badge:'500+ Satisfied Users',
+    title:'Your body deserves<br>a plan <em>built for it</em>',
+    sub:'A smart 10-question assessment builds your 100% personalized nutrition & workout plan — sent instantly to your email',
+    cta1:'Get My Plan Now →',cta2:'How it works?',
+    trust:'<div class="trust-item"><span class="trust-icon">🔒</span>Secure Payment</div><div class="trust-item"><span class="trust-icon">📧</span>Instant Delivery</div><div class="trust-item"><span class="trust-icon">✅</span>24h Guarantee</div>',
+    stats:[{n:'+500',l:'Satisfied Users'},{n:'21',l:'Custom Meals/Week'},{n:'7',l:'Workout Sessions'}],
+    athL:['Weight Loss','Muscle Building','Fitness & Cardio'],
+    howEye:'How it works',howTitle:'From <em>question</em> to complete plan',howSub:'Only 3 minutes and your plan is ready',
+    steps:[
+      {n:'01',t:'Answer 10 questions',d:'Age, weight, goal, activity level, dietary restrictions'},
+      {n:'02',t:'Smart analysis',d:'We calculate your daily calories, BMI & ideal macros'},
+      {n:'03',t:'Custom nutrition plan',d:'21 weekly meals with cooking video tutorials'},
+      {n:'04',t:'Workout program',d:'Cardio or weights — tailored to your goal & health'},
+      {n:'05',t:'Sent to your email',d:'After PayPal confirmation, arrives in under 1 minute'}
+    ],
+    featEye:'Features',featTitle:'Everything you need <em>in one place</em>',featSub:'A complete program combining nutrition, fitness & follow-up',
+    feats:[
+      {e:'📊',t:'Precise Medical Analysis',d:'BMI, calories, macro distribution'},
+      {e:'🍽️',t:'Meals with Videos',d:'Every meal with a YouTube link'},
+      {e:'💪',t:'Workouts with Videos',d:'Correct form tutorials'},
+      {e:'🌐',t:'3 Languages',d:'Arabic, English, French'},
+      {e:'📧',t:'Instant Email Delivery',d:'Professional design in your inbox'},
+      {e:'🔒',t:'Secure Payment',d:'PayPal + 24h money-back guarantee'}
+    ],
+    resPhotoTitle:'Real Results from Real Users',resPhotoSub:'Achieved within 4 weeks of following the program',
+    bef:'Before',aft:'After',
+    results:[
+      {b:'108kg',a:'95kg',n:'Said, 36 — Algeria',tag:'Weight Loss'},
+      {b:'72kg',a:'80kg',n:'Karim, 24 — Tunisia',tag:'Muscle Building'},
+      {b:'90kg',a:'78kg',n:'Sara, 31 — Morocco',tag:'Diet + Exercise'}
+    ],
+    trainEye:'Designed for everyone',trainTitle:'For every goal,<br><em>a custom program</em>',trainSub:'Whether beginner or advanced, male or female',
+    trainers:[
+      {n:'Weight Loss',r:'Fat burning & calorie deficit'},
+      {n:'Muscle Building',r:'Increase lean muscle mass'},
+      {n:'Fitness',r:'Endurance, strength & flexibility'},
+      {n:'General Health',r:'Balanced healthy lifestyle'}
+    ],
+    testiEye:'User Reviews',testiTitle:'What they said <em>about the program</em>',
+    testis:[
+      {av:'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80',stars:'★★★★★',text:'The program changed my life. First time I got a plan perfectly adapted to my weight, height and health. Meals were delicious.',n:'Um Khalid',i:'Homemaker, 38'},
+      {av:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',stars:'★★★★★',text:'Lost 5kg in a month using the weekly program. Workouts were perfect for my beginner level. Highly recommend.',n:'Mohamed T.',i:'Employee, 29'},
+      {av:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',stars:'★★★★★',text:'Didn\'t expect such a professional plan for $10. The email had everything in detail — meals, workouts, and tips.',n:'Nour A.',i:'Student, 22'}
+    ],
+    priceEye:'Pricing',priceTitle:'Choose your <em>package</em>',priceSub:'One-time payment — no monthly subscriptions',
+    plans:[
+      {name:'1-Day Program',desc:'Try the program for a full day',price:'5',cur:'USD',per:'/ one time',
+       feats:['Full-day nutrition plan','Custom workout with video','BMI & calorie analysis','Instant email delivery'],btn:'Get It Now',f:false},
+      {name:'Full Week Program',desc:'The best choice for real results',price:'10',cur:'USD',per:'/ one time',badge:'⭐ Best Seller',
+       feats:['21 custom meals (7 days)','7 full workout sessions','Cooking & workout videos','Complete medical analysis','Personalized health tips','Instant email delivery'],btn:'Get It Now',f:true}
+    ],
+    guarTitle:'24-Hour Money-Back Guarantee',guarDesc:'Not satisfied for any reason? Full refund within 24 hours. No questions asked.',
+    faqEye:'FAQ',faqTitle:'Have a <em>question?</em>',
+    faqs:[
+      {q:'How do I receive the program after payment?',a:'As soon as PayPal confirms, your plan is automatically emailed in under 1 minute.'},
+      {q:'Is it suitable for all ages?',a:'Yes, adapts to your age, weight and health. Works for ages 14-70.'},
+      {q:'Does it work offline?',a:'The app works offline after download. YouTube links require internet.'},
+      {q:'Can I pay without PayPal?',a:'PayPal accepts Visa/Mastercard. CIB & Dahabia coming soon.'},
+      {q:'What if I don\'t get the email?',a:'Check Spam folder. Still missing? Contact: elayachiauto@gmail.com'}
+    ],
+    finalTitle:'Start your <em>journey</em> today',finalSub:'Your personalized plan is ready in 3 minutes — sent instantly',finalCta:'Get My Plan Now →',
+    float:'🔥 Get Your Plan',
+    foot:'© 2025 AYACHI INFO • All rights reserved • elayachiauto@gmail.com'
+  },
+  fr:{
+    dir:'ltr',lang:'fr',
+    badge:'Plus de 500 utilisateurs satisfaits',
+    title:'Votre corps mérite<br>un plan <em>fait pour lui</em>',
+    sub:'Un questionnaire de 10 questions crée votre plan nutrition & sport 100% personnalisé — envoyé instantanément',
+    cta1:'Obtenir mon plan →',cta2:'Comment ça marche ?',
+    trust:'<div class="trust-item"><span class="trust-icon">🔒</span>Paiement sécurisé</div><div class="trust-item"><span class="trust-icon">📧</span>Livraison instantanée</div><div class="trust-item"><span class="trust-icon">✅</span>Garantie 24h</div>',
+    stats:[{n:'+500',l:'Utilisateurs satisfaits'},{n:'21',l:'Repas personnalisés'},{n:'7',l:'Séances sport'}],
+    athL:['Perte de poids','Musculation','Fitness & Cardio'],
+    howEye:'Comment ça marche',howTitle:'De la <em>question</em> au plan complet',howSub:'Seulement 3 minutes et votre plan est prêt',
+    steps:[
+      {n:'01',t:'Répondez à 10 questions',d:'Âge, poids, objectif, niveau d\'activité, restrictions'},
+      {n:'02',t:'Analyse intelligente',d:'Calcul des calories, IMC et macros idéaux'},
+      {n:'03',t:'Plan nutritionnel',d:'21 repas hebdomadaires avec vidéos de cuisine'},
+      {n:'04',t:'Programme sportif',d:'Cardio ou musculation selon votre objectif'},
+      {n:'05',t:'Envoyé par email',d:'Après PayPal, arrive en moins d\'une minute'}
+    ],
+    featEye:'Fonctionnalités',featTitle:'Tout ce qu\'il faut <em>en un seul endroit</em>',featSub:'Programme complet combinant nutrition, sport et suivi',
+    feats:[
+      {e:'📊',t:'Analyse médicale',d:'IMC, calories, répartition des macros'},
+      {e:'🍽️',t:'Repas avec vidéos',d:'Chaque repas avec lien YouTube'},
+      {e:'💪',t:'Exercices en vidéo',d:'Tutoriels sur la bonne exécution'},
+      {e:'🌐',t:'3 langues',d:'Arabe, anglais, français'},
+      {e:'📧',t:'Livraison instantanée',d:'Design professionnel dans votre boîte'},
+      {e:'🔒',t:'Paiement sécurisé',d:'PayPal + garantie remboursement 24h'}
+    ],
+    resPhotoTitle:'Résultats réels, personnes réelles',resPhotoSub:'Obtenus en 4 semaines en suivant le programme',
+    bef:'Avant',aft:'Après',
+    results:[
+      {b:'108kg',a:'95kg',n:'Saïd, 36 — Algérie',tag:'Perte de poids'},
+      {b:'72kg',a:'80kg',n:'Karim, 24 — Tunisie',tag:'Musculation'},
+      {b:'90kg',a:'78kg',n:'Sara, 31 — Maroc',tag:'Régime + Sport'}
+    ],
+    trainEye:'Conçu pour tout le monde',trainTitle:'Pour chaque objectif,<br><em>un programme dédié</em>',trainSub:'Débutant ou avancé, homme ou femme',
+    trainers:[
+      {n:'Perte de poids',r:'Brûler les graisses et le déficit calorique'},
+      {n:'Musculation',r:'Augmenter la masse musculaire maigre'},
+      {n:'Fitness',r:'Endurance, force et flexibilité'},
+      {n:'Santé générale',r:'Mode de vie sain et équilibré'}
+    ],
+    testiEye:'Avis clients',testiTitle:'Ce qu\'ils ont dit <em>du programme</em>',
+    testis:[
+      {av:'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80',stars:'★★★★★',text:'Le programme a changé ma vie. Première fois que je reçois un plan parfaitement adapté à mon poids et ma santé.',n:'Um Khalid',i:'Femme au foyer, 38 ans'},
+      {av:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',stars:'★★★★★',text:'J\'ai perdu 5kg en un mois avec le programme semaine. Les exercices étaient parfaits pour mon niveau débutant.',n:'Mohamed T.',i:'Employé, 29 ans'},
+      {av:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',stars:'★★★★★',text:'Je ne m\'attendais pas à un plan aussi professionnel pour 10 USD. L\'email contenait tout en détail.',n:'Nour A.',i:'Étudiante, 22 ans'}
+    ],
+    priceEye:'Tarifs',priceTitle:'Choisissez votre <em>forfait</em>',priceSub:'Paiement unique — pas d\'abonnement mensuel',
+    plans:[
+      {name:'Programme 1 Jour',desc:'Essayez pour une journée complète',price:'5',cur:'USD',per:'/ unique',
+       feats:['Plan nutritionnel d\'une journée','Entraînement avec vidéo','Analyse IMC et calories','Livraison instantanée'],btn:'Obtenir maintenant',f:false},
+      {name:'Programme Semaine',desc:'Le meilleur choix pour de vrais résultats',price:'10',cur:'USD',per:'/ unique',badge:'⭐ Best-seller',
+       feats:['21 repas (7 jours)','7 séances complètes','Vidéos cuisine et sport','Analyse médicale complète','Conseils personnalisés','Livraison instantanée'],btn:'Obtenir maintenant',f:true}
+    ],
+    guarTitle:'Garantie remboursement 24 heures',guarDesc:'Pas satisfait ? Remboursement complet en 24h. Sans questions.',
+    faqEye:'FAQ',faqTitle:'Une <em>question ?</em>',
+    faqs:[
+      {q:'Comment je reçois le programme ?',a:'Dès confirmation PayPal, votre plan est envoyé par email en moins d\'une minute.'},
+      {q:'Convient à tous les âges ?',a:'Oui, s\'adapte à votre âge, poids et santé. Pour les 14-70 ans.'},
+      {q:'Fonctionne hors ligne ?',a:'L\'app fonctionne hors ligne. Les liens YouTube nécessitent internet.'},
+      {q:'Payer sans PayPal ?',a:'PayPal accepte Visa/Mastercard. CIB et Dahabia bientôt disponibles.'},
+      {q:'Email non reçu ?',a:'Vérifiez Spam. Toujours absent ? Contactez : elayachiauto@gmail.com'}
+    ],
+    finalTitle:'Commencez votre <em>parcours</em> aujourd\'hui',finalSub:'Votre plan personnalisé prêt en 3 minutes — envoyé instantanément',finalCta:'Obtenir mon plan →',
+    float:'🔥 Mon plan santé',
+    foot:'© 2025 AYACHI INFO • Tous droits réservés • elayachiauto@gmail.com'
+  }
+};
+
+let lang=(navigator.language||'ar').slice(0,2);
+if(!T[lang])lang='en';
+if((navigator.language||'').startsWith('ar'))lang='ar';
+
+function L(l){
+  lang=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.includes(l.toUpperCase())));
+  render();
+}
+
+function render(){
+  const t=T[lang];
+  document.documentElement.setAttribute('lang',t.lang);
+  document.documentElement.setAttribute('dir',t.dir);
+
+  // Hero
+  document.getElementById('hBadge').textContent=t.badge;
+  document.getElementById('hTitle').innerHTML=t.title;
+  document.getElementById('hSub').textContent=t.sub;
+  document.getElementById('hCta1').textContent=t.cta1;
+  document.getElementById('hCta2').textContent=t.cta2;
+  document.getElementById('hTrust').innerHTML=t.trust;
+  document.getElementById('floatBtn').textContent=t.float;
+
+  // Stats
+  document.getElementById('statsBand').innerHTML=t.stats.map(s=>
+    `<div class="sband-item"><div class="sband-num">${s.n}</div><div class="sband-lbl">${s.l}</div></div>`).join('');
+
+  // Athlete strip
+  ['athL1','athL2','athL3'].forEach((id,i)=>document.getElementById(id).textContent=t.athL[i]);
+
+  // How
+  document.getElementById('howEye').textContent=t.howEye;
+  document.getElementById('howTitle').innerHTML=t.howTitle;
+  document.getElementById('howSub').textContent=t.howSub;
+  document.getElementById('stepsEl').innerHTML=t.steps.map(s=>
+    `<div class="step"><div class="step-num">${s.n}</div><div><div class="step-title">${s.t}</div><div class="step-desc">${s.d}</div></div></div>`).join('');
+
+  // Features
+  document.getElementById('featEye').textContent=t.featEye;
+  document.getElementById('featTitle').innerHTML=t.featTitle;
+  document.getElementById('featSub').textContent=t.featSub;
+  document.getElementById('featGrid').innerHTML=t.feats.map(f=>
+    `<div class="feat-card"><span class="feat-em">${f.e}</span><div class="feat-t">${f.t}</div><div class="feat-d">${f.d}</div></div>`).join('');
+
+  // Results
+  document.getElementById('resPhotoTitle').textContent=t.resPhotoTitle;
+  document.getElementById('resPhotoSub').textContent=t.resPhotoSub;
+  document.getElementById('baContainer').innerHTML=t.results.map(r=>{
+    // For Arabic (RTL): right side = بعد (result), left side = قبل (start)
+    // For EN/FR (LTR): left = Before, right = After
+    if(t.dir==='rtl'){
+      return `
+      <div class="ba-card" style="direction:ltr">
+        <div class="ba-side">
+          <div class="ba-lbl">قبل</div>
+          <div class="ba-val b">${r.b}</div>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-side">
+          <div class="ba-lbl">بعد</div>
+          <div class="ba-val a">${r.a}</div>
+        </div>
+      </div>
+      <div class="ba-foot" style="direction:rtl">${r.n} <span class="ba-tag">${r.tag}</span></div>`;
+    } else {
+      return `
+      <div class="ba-card" style="direction:ltr">
+        <div class="ba-side">
+          <div class="ba-lbl">${t.bef}</div>
+          <div class="ba-val b">${r.b}</div>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-side">
+          <div class="ba-lbl">${t.aft}</div>
+          <div class="ba-val a">${r.a}</div>
+        </div>
+      </div>
+      <div class="ba-foot">${r.n} <span class="ba-tag">${r.tag}</span></div>`;
+    }
+  }).join('');
+
+  // Trainers
+  document.getElementById('trainEye').textContent=t.trainEye;
+  document.getElementById('trainTitle').innerHTML=t.trainTitle;
+  document.getElementById('trainSub').textContent=t.trainSub;
+  t.trainers.forEach((tr,i)=>{
+    document.getElementById('tr'+(i+1)+'n').textContent=tr.n;
+    document.getElementById('tr'+(i+1)+'r').textContent=tr.r;
+  });
+
+  // Testimonials
+  document.getElementById('testiEye').textContent=t.testiEye;
+  document.getElementById('testiTitle').innerHTML=t.testiTitle;
+  document.getElementById('testiGrid').innerHTML=t.testis.map(ts=>`
+    <div class="testi-card">
+      <div class="testi-avatar"><img src="${ts.av}" alt="${ts.n}" loading="lazy"></div>
+      <div class="testi-body">
+        <div class="stars">${ts.stars}</div>
+        <div class="testi-text">${ts.text}</div>
+        <div class="testi-name">${ts.n}</div>
+        <div class="testi-info2">${ts.i}</div>
+      </div>
+    </div>`).join('');
+
+  // Pricing
+  document.getElementById('priceEye').textContent=t.priceEye;
+  document.getElementById('priceTitle').innerHTML=t.priceTitle;
+  document.getElementById('priceSub').textContent=t.priceSub;
+  document.getElementById('pricingGrid').innerHTML=t.plans.map(p=>`
+    <div class="price-card ${p.f?'featured':''}">
+      ${p.badge?`<div class="price-badge">${p.badge}</div>`:''}
+      <div class="price-name">${p.name}</div>
+      <div class="price-desc">${p.desc}</div>
+      <div class="price-val">
+        <div class="price-num">${p.price}</div>
+        <div><div class="price-cur">${p.cur}</div><div class="price-per">${p.per}</div></div>
+      </div>
+      <ul class="price-feats">${p.feats.map(f=>`<li><span class="ck">✓</span>${f}</li>`).join('')}</ul>
+      <a href="app.html" class="price-btn ${p.f?'btn-solid':'btn-outline'}" onclick="openApp('${p.f?'week':'day'}')">${p.btn}</a>
+    </div>`).join('');
+
+  document.getElementById('guarTitle').textContent=t.guarTitle;
+  document.getElementById('guarDesc').textContent=t.guarDesc;
+
+  // FAQ
+  document.getElementById('faqEye').textContent=t.faqEye;
+  document.getElementById('faqTitle').innerHTML=t.faqTitle;
+  document.getElementById('faqEl').innerHTML=t.faqs.map(f=>`
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">${f.q}<span class="faq-icon">+</span></div>
+      <div class="faq-a">${f.a}</div>
+    </div>`).join('');
+
+  // Final
+  document.getElementById('finalTitle').innerHTML=t.finalTitle;
+  document.getElementById('finalSub').textContent=t.finalSub;
+  document.getElementById('finalCta').textContent=t.finalCta;
+  document.getElementById('footCopy').textContent=t.foot;
+
+  // Payment strip
+  const ps={
+    ar:{title:'طرق الدفع المتاحة',d1:'Visa / Mastercard / رصيد PayPal',b1:'متاح الآن',n2:'البطاقة الذهبية (Dahabia)',d2:'عبر Chargily Pay — دفع محلي آمن',b2:'جديد ✨',d3:'بطاقة CIB الجزائرية عبر Chargily',b3:'جديد ✨',n4:'دفع آمن 100%',d4:'تشفير SSL • ضمان 24 ساعة',b4:'مضمون'},
+    en:{title:'Available Payment Methods',d1:'Visa / Mastercard / PayPal Balance',b1:'Available',n2:'Dahabia Card (Algeria)',d2:'Via Chargily Pay — secure local payment',b2:'New ✨',d3:'CIB Algerian bank card via Chargily',b3:'New ✨',n4:'100% Secure Payment',d4:'SSL Encryption • 24h Money-Back',b4:'Guaranteed'},
+    fr:{title:'Modes de paiement disponibles',d1:'Visa / Mastercard / Solde PayPal',b1:'Disponible',n2:'Carte Dahabia (Algérie)',d2:'Via Chargily Pay — paiement local sécurisé',b2:'Nouveau ✨',d3:'Carte CIB algérienne via Chargily',b3:'Nouveau ✨',n4:'Paiement 100% sécurisé',d4:'Cryptage SSL • Garantie 24h',b4:'Garanti'}
+  };
+  const p=ps[lang]||ps.ar;
+  document.getElementById('payStripTitle').textContent=p.title;
+  document.getElementById('pmDesc1').textContent=p.d1;
+  document.getElementById('pmBadge1').textContent=p.b1;
+  document.getElementById('pmName2').textContent=p.n2;
+  document.getElementById('pmDesc2').textContent=p.d2;
+  document.getElementById('pmBadge2').textContent=p.b2;
+  document.getElementById('pmDesc3').textContent=p.d3;
+  document.getElementById('pmBadge3').textContent=p.b3;
+  document.getElementById('pmName4').textContent=p.n4;
+  document.getElementById('pmDesc4').textContent=p.d4;
+  document.getElementById('pmBadge4').textContent=p.b4;
+}
+
+render();
+
+// ── App link function ──
+const APP_URL = 'https://elayachiauto-code.github.io/Hapitoslife/app.html';
+const LANDING_URL = 'https://elayachiauto-code.github.io/Hapitoslife/';
+
+function openApp(plan){
+  window.location.href = APP_URL + (plan ? '?plan='+plan : '');
+}
+
+// ── Smooth scroll for hero CTAs ──
+document.getElementById('hCta1').addEventListener('click',function(e){
+  e.preventDefault();
+  document.getElementById('pricing').scrollIntoView({behavior:'smooth'});
+});
+document.getElementById('hCta2').addEventListener('click',function(e){
+  e.preventDefault();
+  document.getElementById('how').scrollIntoView({behavior:'smooth'});
+});
+document.getElementById('floatBtn').addEventListener('click',function(e){
+  e.preventDefault();
+  document.getElementById('pricing').scrollIntoView({behavior:'smooth'});
+});
+document.getElementById('finalCta').addEventListener('click',function(e){
+  e.preventDefault();
+  document.getElementById('pricing').scrollIntoView({behavior:'smooth'});
+});
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
